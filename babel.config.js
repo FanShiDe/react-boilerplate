@@ -4,6 +4,7 @@ module.exports = {
       '@babel/env',
       {
         useBuiltIns: 'usage',
+        corejs: { version: 3, proposals: true }
       },
     ],
     '@babel/preset-typescript',
@@ -11,6 +12,7 @@ module.exports = {
       '@babel/preset-react',
       {
         development: process.env.BABEL_ENV === 'development',
+        modules: false,
       },
     ],
   ],
