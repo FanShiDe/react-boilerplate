@@ -5,3 +5,5 @@ dist
 buld
 
 yarn-error.log
+
+.vscode

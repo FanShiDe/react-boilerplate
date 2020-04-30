@@ -14,5 +14,5 @@ module.exports = {
       },
     ],
   ],
-  plugins: ['react-hot-loader/babel'],
+  plugins: ['react-hot-loader/babel', '@babel/plugin-proposal-optional-chaining', '@babel/plugin-proposal-nullish-coalescing-operator'],
 }
