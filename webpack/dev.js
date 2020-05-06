@@ -1,9 +1,12 @@
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 const common = require('./common')
 const paths = require('./utils/paths')
+
+const shouldUseReactRefresh = process.env.FAST_REFRESH
 
 module.exports = merge(common, {
   mode: 'development',
@@ -31,5 +34,9 @@ module.exports = merge(common, {
     // makes the discovery automatic so you don't have to restart.
     // See https://github.com/facebook/create-react-app/issues/186
     new WatchMissingNodeModulesPlugin(paths.nodeModules),
-  ],
+    shouldUseReactRefresh && new ReactRefreshWebpackPlugin({
+      useLegacyWDSSockets: true,
+      disableRefreshCheck: true,
+    }),
+  ].filter(Boolean),
 })

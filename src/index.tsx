@@ -1,16 +1,16 @@
-import { hot } from 'react-hot-loader/root'
+// import { hot } from 'react-hot-loader/root'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
 import App from 'src/containers/App'
 
-const HotApp = hot(App)
+// const HotApp = hot(App)
 
 const MOUNT_NODE = document.getElementById('root')
 const render = () =>
   ReactDOM.render(
     <React.StrictMode>
-      <HotApp />
+      <App />
     </React.StrictMode>,
     MOUNT_NODE,
   )

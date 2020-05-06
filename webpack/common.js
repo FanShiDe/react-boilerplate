@@ -7,6 +7,8 @@ const ManifestPlugin = require('webpack-manifest-plugin')
 const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+require('dotenv').config()
+
 const paths = require('./utils/paths')
 const getClientEnvironment = require('./utils/env')
 
@@ -189,7 +191,8 @@ module.exports = {
       lib: paths.appLib,
       containers: paths.appContainers,
       component: paths.appComponents,
-      'react-dom': '@hot-loader/react-dom',
+      // https://github.com/gaearon/react-hot-loader
+      // 'react-dom': '@hot-loader/react-dom',
     },
   },
   node: {
